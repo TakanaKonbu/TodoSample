@@ -21,13 +21,3 @@ class TodoViewModel(private val repository: TodoRepository) : ViewModel() {
         repository.deleteTodo(todo)
     }
 }
-
-class TodoViewModelFactory(private val repository: TodoRepository) : ViewModelProvider.Factory {
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(TodoViewModel::class.java)) {
-            @Suppress("UNCHECKED_CAST")
-            return TodoViewModel(repository) as T
-        }
-        throw IllegalArgumentException("Unknown ViewModel class")
-    }
-}
