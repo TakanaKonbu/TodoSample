@@ -100,12 +100,3 @@ fun TodoApp() {
         }
     }
 }
-
-@Composable
-fun TodoTheme(content: @Composable () -> Unit) {
-    MaterialTheme(
-        colorScheme = lightColorScheme(),
-        typography = Typography(),
-        content = content
-    )
-}
